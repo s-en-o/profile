@@ -1,33 +1,15 @@
 module.exports = {
-    'root': true,
-    'env': {
-        'browser': true,
-        'es2021': true
+    root: true,
+    env: {
+        browser: true,
+        node: true,
     },
-    'extends': 'standard',
-    'parserOptions': {
-        'ecmaVersion': 12,
-        'sourceType': 'module'
-    },
-    'globals': {
-        'IS_DEVELOPMENT': 'readonly'
-    },
-    'rules': {
-        'indent': [
-            'error',
-            4
-        ],
-        'linebreak-style': [
-            'error',
-            'unix'
-        ],
-        'quotes': [
-            'error',
-            'single'
-        ],
-        'semi': [
-            'error',
-            'always'
-        ]
-    }
-};
+    extends: [
+        '@nuxtjs/eslint-config-typescript',
+        'plugin:nuxt/recommended',
+        'prettier',
+    ],
+    plugins: [],
+    // add your custom rules here
+    rules: {},
+}

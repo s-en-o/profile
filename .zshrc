@@ -114,6 +114,7 @@ alias ga="git add"
 alias gch="git checkout"
 alias gm="git merge"
 alias gl="git log --oneline"
+alias yd="yarn dev"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm

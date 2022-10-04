@@ -107,6 +107,8 @@ alias gm="git merge"
 alias gl="git log --oneline"
 alias dkrma="docker rm -vf $(docker ps -a -q)"
 alias dkrm="docker image rm -f "
+alias gue="git config --local user.email "
+alias gun="git config --local user.name "
 
 export PATH="/usr/local/opt/node@12/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"

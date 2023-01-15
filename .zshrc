@@ -121,6 +121,8 @@ alias dirm="docker image rm "
 alias dils="docker image ls -a"
 alias gue="git config --local user.email "
 alias gun="git config --local user.name "
+alias yd="yarn dev"
+alias gitCreateRepo="gh repo create [repo-name] --source . --push  --private"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm

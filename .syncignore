@@ -1,0 +1,4 @@
+*.asd
+.DS_Store
+.filen.trash.local
+.cache

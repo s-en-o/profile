@@ -123,6 +123,9 @@ alias gue="git config --local user.email "
 alias gun="git config --local user.name "
 alias yd="yarn dev"
 alias gitCreateRepo="gh repo create [repo-name] --source . --push  --private"
+alias python="/opt/homebrew/bin/python3"
+alias pip="/opt/homebrew/bin/pip3"
+#alias python=/usr/bin/python3
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm

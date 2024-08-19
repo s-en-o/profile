@@ -3,13 +3,13 @@ oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/
 
 # ALIASES
 function Get-GitPush { & git push }
-New-Alias -Name "gpsh" Get-GitPush
+New-Alias -Name "gpss" Get-GitPush
 function Get-GitPull { & git pull }
 New-Alias -Name "gpl" Get-GitPull
 function Get-GitStatus { & git status }
 New-Alias -Name "gst" Get-GitStatus
 function Get-GitCommit { & git commit -m $args }
-New-Alias -Name "gcmt" Get-GitCommit
+New-Alias -Name "gcmm" Get-GitCommit
 function Get-GitAdd { & git add $args }
 New-Alias -Name "ga" Get-GitAdd
 function Get-GitCheckout { & git checkout $args }

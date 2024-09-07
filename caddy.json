@@ -1,0 +1,102 @@
+{
+	"apps": {
+		"http": {
+			"servers": {
+				"example": {
+					"listen": [
+						":2015"
+					],
+					"routes": [
+						{
+							"handle": [
+								{
+									"@id": "hard",
+									"handler": "static_response",
+									"body": "I can do hard things."
+								}
+							]
+						}
+					]
+				},
+				"bye": {
+					"listen": [
+						":2016"
+					],
+					"routes": [
+						{
+							"handle": [
+								{
+									"@id": "bye",
+									"handler": "static_response",
+									"body": "Goodbye, world!"
+								}
+							]
+						}
+					]
+				},
+				"new": {
+					"listen": [
+						":2017"
+					],
+					"routes": [
+						{
+							"handle": [
+								{
+									"@id": "new",
+									"handler": "static_response",
+									"body": "New stuff!"
+								}
+							]
+						}
+					]
+				},
+				"portainer": {
+					"listen": [
+						":2018"
+					],
+					"routes": [
+						{
+							"handle": [
+								{
+									"@id": "portainer",
+									"handler": "reverse_proxy",
+									"transport": {
+										"protocol": "http",
+										"tls": {
+											"insecure_skip_verify": true
+										}
+									},
+									"upstreams": [
+										{
+											"dial": "localhost:9443"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				"hello-world": {
+					"listen": [
+						":8081"
+					],
+					"routes": [
+						{
+							"handle": [
+								{
+									"@id": "hello-world",
+									"handler": "reverse_proxy",
+									"upstreams": [
+										{
+											"dial": "localhost:8080"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			}
+		}
+	}
+}

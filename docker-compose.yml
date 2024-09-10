@@ -3,11 +3,11 @@ services:
         image: 'caddy:alpine'
         volumes:
             - type: volume
-              source: ./src/index.html
-              target: /srv/index.html
+              source: ./src
+              target: /srv
             - type: volume
-              source: ./caddy/Caddyfile
-              target: /etc/caddy/Caddyfile
+              source: ./caddy
+              target: /etc/caddy
         #     - caddy_data:/data
         #     - $PWD/site:/srv
         #     - caddy_config:/config

@@ -1,9 +1,9 @@
 services:
     caddy:
         image: 'caddy:alpine'
-        # volumes:
-        #     - $PWD/src/index.html:/srv/index.html
-        #     - $PWD/src/Caddyfile:/etc/caddy/Caddyfile
+        volumes:
+            - /src/index.html:/srv/index.html
+            - /src/Caddyfile:/etc/caddy/Caddyfile
         #     - caddy_data:/data
         #     - $PWD/site:/srv
         #     - caddy_config:/config

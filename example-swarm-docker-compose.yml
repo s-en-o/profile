@@ -1,0 +1,27 @@
+services:
+  helloworld:
+    #image: "crccheck/hello-world:v1.0.0"
+    #ports:
+      #- "80:8000"
+    image: "nginxdemos/nginx-hello:0.3"
+    #ports:
+    #  - "80:8080"
+    ports:
+      - target: 8080
+        published: 80
+        protocol: tcp
+        mode: ingress
+    deploy:
+      placement: 
+          constraints: 
+            - node.role == worker
+      #mode: global
+      #mode: replicated
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 500M
+      restart_policy:
+        condition: any
+      

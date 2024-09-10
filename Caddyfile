@@ -1,1 +1,5 @@
-myapp.local
+localhost {
+	encode zstd gzip
+	templates
+	file_server browse
+}

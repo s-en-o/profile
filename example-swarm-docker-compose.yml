@@ -1,27 +1,57 @@
 services:
-  helloworld:
-    #image: "crccheck/hello-world:v1.0.0"
-    #ports:
-      #- "80:8000"
-    image: "nginxdemos/nginx-hello:0.3"
-    #ports:
-    #  - "80:8080"
-    ports:
-      - target: 8080
-        published: 80
-        protocol: tcp
-        mode: ingress
-    deploy:
-      placement: 
-          constraints: 
-            - node.role == worker
-      #mode: global
-      #mode: replicated
-      replicas: 2
-      resources:
-        limits:
-          cpus: "0.5"
-          memory: 500M
-      restart_policy:
-        condition: any
-      
+    caddy:
+        image: 'caddy:alpine'
+        volumes:
+            # - $PWD/index.html:/usr/share/caddy/index.html
+            - caddy_data:/data
+        ports:
+            - target: 80
+              published: 80
+              protocol: tcp
+              mode: ingress
+            # - target: 443
+            #   published: 443
+            #   protocol: tcp
+            #   mode: ingress
+            # - target: 443
+            #   published: 443
+            #   protocol: udp
+            #   mode: ingress
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.5'
+                    memory: 500M
+            restart_policy:
+                condition: any
+        extends: shared
+
+    helloworld:
+        #image: "crccheck/hello-world:v1.0.0"
+        #ports:
+        #- "80:8000"
+        image: 'nginxdemos/nginx-hello:0.3'
+        #ports:
+        #  - "80:8080"
+        ports:
+            - target: 8080
+              published: 8080
+              protocol: tcp
+              mode: ingress
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.5'
+                    memory: 500M
+            restart_policy:
+                condition: any
+        extends: shared
+
+    shared:
+        #mode: global
+        #mode: replicated
+        replicas: 2
+        deploy:
+            placement:
+                constraints:
+                    - node.role == worker

@@ -72,7 +72,8 @@ services:
     #         placement:
     #             constraints:
     #                 - node.role == worker
-# volumes:
-#     caddy_data:
-#         external: true
-#     caddy_config:
+volumes:
+    src:
+    # caddy_data:
+    #     external: true
+    # caddy_config:

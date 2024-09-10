@@ -3,10 +3,10 @@ services:
         image: 'caddy:alpine'
         volumes:
             - type: volume
-              source: /src/index.html
+              source: ./src/index.html
               target: /srv/index.html
             - type: volume
-              source: /src/Caddyfile
+              source: ./caddy/Caddyfile
               target: /etc/caddy/Caddyfile
         #     - caddy_data:/data
         #     - $PWD/site:/srv
@@ -74,6 +74,8 @@ services:
     #                 - node.role == worker
 volumes:
     src:
+        external: true
+    caddy:
         external: true
     # caddy_data:
     #     external: true

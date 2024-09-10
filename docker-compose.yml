@@ -74,9 +74,9 @@ services:
     #                 - node.role == worker
 volumes:
     src:
-        external: true
+        # external: true
     caddy:
-        external: true
+        # external: true
     # caddy_data:
     #     external: true
     # caddy_config:

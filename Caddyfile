@@ -1,0 +1,23 @@
+localhost {
+        redir https://seno.me permanent
+        # Set this path to your site's directory.
+        #root * /usr/share/caddy
+
+        # Enable the static file server.
+        #file_server
+
+        # Another common task is to set up a reverse proxy:
+        # reverse_proxy localhost:8080
+
+        # Or serve a PHP site through php-fpm:
+        # php_fastcgi localhost:9000
+}
+
+# APP :3000
+app.seno.me {
+        # Running container
+        reverse_proxy localhost:3000
+}
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile

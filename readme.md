@@ -1,1 +1,1 @@
-# My favourite profile alias / settings
+# My favourite various configuration

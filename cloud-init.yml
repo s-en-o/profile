@@ -1,0 +1,20 @@
+#cloud-config
+users:
+  - default
+  - name: <USERNAME>
+    gecos: User description
+    shell: /bin/bash
+    groups:
+      - sudo
+    sudo:
+      - ALL=(ALL) NOPASSWD:ALL
+      #- ALL=(ALL:ALL) ALL
+    lock_passwd: true
+    ssh_authorized_keys:
+      - <SSH_PUBLIC_KEY_FIRST>
+      - <SSH_PUBLIC_KEY_SECOND>
+# Disable Root User
+runcmd:
+  - sed -i '/PermitRootLogin/d' /etc/ssh/sshd_config
+  - echo "PermitRootLogin no" >> /etc/ssh/sshd_config
+  - systemctl restart sshd

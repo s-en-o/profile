@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: myapp
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: svc-lb
+    namespace: myapp
+    labels:
+        app: svc-lb
+spec:
+    type: LoadBalancer
+    ports:
+        - port: 8080
+          targetPort: 8000
+    selector:
+        app: dep-myapp # Need to match deployment labels
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: dep-myapp
+    namespace: myapp
+    labels:
+        app: dep-myapp
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: dep-myapp
+    template:
+        metadata:
+            labels:
+                app: dep-myapp
+        spec:
+            containers:
+                - name: dep-myapp
+                  image: crccheck/hello-world
+                  ports:
+                      - containerPort: 8000

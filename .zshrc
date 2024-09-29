@@ -128,6 +128,7 @@ alias gitCreateRepo="gh repo create [repo-name] --source . --push  --private"
 alias python="/opt/homebrew/bin/python3"
 alias pip="/opt/homebrew/bin/pip3"
 #alias python=/usr/bin/python3
+alias mp="multipass"
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 

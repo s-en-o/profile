@@ -46,7 +46,7 @@ const tilePosition = (position) => {
     const heightFull = screen.height - padding * 2
     const YBottomHalf = screen.y + screen.height / 2 + paddingHalf
     const widthHalf = screen.width / 2 - (padding + paddingHalf)
-    const oneThird = screen.width / 4
+    const oneThird = screen.width / 3
     const widthOneThird = oneThird - (padding + paddingHalf)
     const widthTwoThird = screen.width - oneThird - (padding + paddingHalf)
 

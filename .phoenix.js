@@ -1,7 +1,7 @@
 // Modifier keys
 const MOD = ['shift', 'ctrl']
 const MOD2 = ['shift', 'ctrl', 'alt']
-const MOD3 = ['shift', 'ctrl', 'alt', 'cmd']
+const MOD3 = ['ctrl', 'alt', 'cmd']
 // ====================================
 //              Padding
 // ====================================
@@ -13,7 +13,7 @@ const findScreen = () => {
     const screenCurrent = Screen.main()
     const screen = screenCurrent.flippedVisibleFrame()
 
-    return { screenCurrent: screen }
+    return { screen }
 }
 // Move to next display with two monitor setup
 const moveToNextDisplay = (window) => {
@@ -41,11 +41,12 @@ const tilePosition = (position) => {
     const window = Window.focused()
     if (!window) return
 
-    const { screenCurrent: screen } = findScreen()
+    const { screen } = findScreen()
     const heightHalf = screen.height / 2 - (padding + paddingHalf)
     const heightFull = screen.height - padding * 2
     const YBottomHalf = screen.y + screen.height / 2 + paddingHalf
     const widthHalf = screen.width / 2 - (padding + paddingHalf)
+    const oneFourth = screen.width / 4
     const oneThird = screen.width / 3
     const widthOneThird = oneThird - (padding + paddingHalf)
     const widthTwoThird = screen.width - oneThird - (padding + paddingHalf)
@@ -79,6 +80,8 @@ const tilePosition = (position) => {
             break
 
         case 'leftOneThird':
+            // console.log(JSON.stringify(Screen.main().frame()))
+            console.log(screen.width, widthOneThird)
             window.setFrame({
                 x: screen.x + padding,
                 y: screen.y + padding,
@@ -143,9 +146,18 @@ const tilePosition = (position) => {
 
         case 'screenMiddle':
             window.setFrame({
+                x: screen.x + oneFourth,
+                y: screen.y + padding,
+                width: screen.width / 2 - padding,
+                height: heightFull,
+            })
+            break
+
+        case 'screenMiddleOneThird':
+            window.setFrame({
                 x: screen.x + oneThird + paddingHalf,
                 y: screen.y + padding,
-                width: screen.width / 2 - padding * 2,
+                width: oneThird - padding,
                 height: heightFull,
             })
             break
@@ -237,6 +249,10 @@ const rightBottom = Key.on('c', MOD, () => {
 const screenMiddle = Key.on('s', MOD, () => {
     tilePosition('screenMiddle')
 })
+
+const screenMiddleOneThird = Key.on('s', MOD3, () => {
+    tilePosition('screenMiddleOneThird')
+})
 // ====================================
 //                 ELSE
 // ====================================
@@ -256,84 +272,3 @@ const bottomHalf = Key.on('x', MOD, () => {
 const nextDisplay = Key.on('right', MOD, () => {
     tilePosition('nextDisplay')
 })
-
-// ====================================
-// Examples from other users
-// ====================================
-
-// Computed sizes
-// const halfWidth = (scr.width - paddingLeft - paddingRight) / 2
-// const halfHeight =
-//     (scr.height - paddingTop - paddingBottom) / 2 + HALF_CORRECTION
-// const thirdWidth = (scr.width - paddingLeft - paddingRight) / 3
-
-// const windowLocations = {
-//     full: {
-//         y: paddingTop,
-//         x: paddingLeft,
-//         width: scr.width - paddingRight,
-//         height: scr.height - paddingBottom,
-//     },
-//     left: {
-//         y: paddingTop,
-//         x: paddingLeft,
-//         width: halfWidth - paddingCenter,
-//         height: scr.height - paddingBottom,
-//     },
-//     right: {
-//         y: paddingTop,
-//         x: halfWidth + paddingLeft + paddingCenter,
-//         width: halfWidth,
-//         height: scr.height - paddingBottom,
-//     },
-//     //Corners
-//     topRight: {
-//         y: paddingTop,
-//         x: scr.width + paddingLeft + paddingCenter,
-//         width: halfWidth,
-//         height: halfHeight,
-//     },
-//     bottomRight: {
-//         y: halfHeight + paddingTop + paddingMiddle,
-//         x: scr.width + paddingLeft + paddingCenter,
-//         width: halfWidth,
-//         height: halfHeight,
-//     },
-//     topLeft: {
-//         y: scr.y + paddingTop,
-//         x: scr.x + paddingLeft,
-//         width: halfWidth - paddingCenter,
-//         height: halfHeight,
-//     },
-//     bottomLeft: {
-//         y: scr.y + halfHeight - paddingTop,
-//         x: scr.x + paddingLeft,
-//         width: halfWidth - paddingCenter,
-//         height: halfHeight,
-//     },
-//     // Extra sizes
-//     rightTwoThirds: {
-//         y: paddingTop,
-//         x: thirdWidth + paddingLeft + paddingCenter,
-//         width: thirdWidth * 2,
-//         height: scr.height - paddingBottom,
-//     },
-//     leftTwoThirds: {
-//         y: scr.y + paddingTop,
-//         x: scr.x + paddingLeft,
-//         width: thirdWidth * 2 - paddingCenter,
-//         height: scr.height - paddingBottom - paddingTop,
-//     },
-//     leftThird: {
-//         y: paddingTop,
-//         x: paddingLeft,
-//         width: thirdWidth - paddingCenter,
-//         height: scr.height - paddingBottom,
-//     },
-//     rightThird: {
-//         y: paddingTop,
-//         x: thirdWidth * 2 + paddingLeft + paddingCenter,
-//         width: thirdWidth,
-//         height: scr.height - paddingBottom,
-//     },
-// }

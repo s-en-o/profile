@@ -1,3 +1,9 @@
+// Run Phoenix in the background
+Phoenix.set({
+    daemon: true,
+    openAtLogin: true,
+})
+
 // Modifier keys
 const MOD = ['shift', 'ctrl']
 const MOD2 = ['shift', 'ctrl', 'alt']
@@ -46,10 +52,11 @@ const tilePosition = (position) => {
     const heightFull = screen.height - padding * 2
     const YBottomHalf = screen.y + screen.height / 2 + paddingHalf
     const widthHalf = screen.width / 2 - (padding + paddingHalf)
-    const oneFourth = screen.width / 4
-    const oneThird = screen.width / 3
-    const widthOneThird = oneThird - (padding + paddingHalf)
-    const widthTwoThird = screen.width - oneThird - (padding + paddingHalf)
+    const YOneFifth = screen.height / 5
+    const XOneFourth = screen.width / 4
+    const XOneThird = screen.width / 3
+    const widthOneThird = XOneThird - (padding + paddingHalf)
+    const widthTwoThird = screen.width - XOneThird - (padding + paddingHalf)
 
     switch (position) {
         case 'leftHalf':
@@ -80,8 +87,6 @@ const tilePosition = (position) => {
             break
 
         case 'leftOneThird':
-            // console.log(JSON.stringify(Screen.main().frame()))
-            console.log(screen.width, widthOneThird)
             window.setFrame({
                 x: screen.x + padding,
                 y: screen.y + padding,
@@ -128,7 +133,7 @@ const tilePosition = (position) => {
 
         case 'rightOneThird':
             window.setFrame({
-                x: screen.x + (screen.width - oneThird) + paddingHalf,
+                x: screen.x + (screen.width - XOneThird) + paddingHalf,
                 y: screen.y + padding,
                 width: widthOneThird,
                 height: heightFull,
@@ -137,7 +142,7 @@ const tilePosition = (position) => {
 
         case 'rightTwoThird':
             window.setFrame({
-                x: screen.x + oneThird + paddingHalf,
+                x: screen.x + XOneThird + paddingHalf,
                 y: screen.y + padding,
                 width: widthTwoThird,
                 height: heightFull,
@@ -146,18 +151,27 @@ const tilePosition = (position) => {
 
         case 'screenMiddle':
             window.setFrame({
-                x: screen.x + oneFourth,
+                x: screen.x + XOneFourth,
                 y: screen.y + padding,
                 width: screen.width / 2 - padding,
                 height: heightFull,
             })
             break
 
+        case 'screenCenter':
+            window.setFrame({
+                x: screen.x + XOneFourth,
+                y: screen.y + YOneFifth,
+                width: screen.width / 2 - padding,
+                height: YOneFifth * 3,
+            })
+            break
+
         case 'screenMiddleOneThird':
             window.setFrame({
-                x: screen.x + oneThird + paddingHalf,
+                x: screen.x + XOneThird + paddingHalf,
                 y: screen.y + padding,
-                width: oneThird - padding,
+                width: XOneThird - padding,
                 height: heightFull,
             })
             break
@@ -248,6 +262,10 @@ const rightBottom = Key.on('c', MOD, () => {
 // ====================================
 const screenMiddle = Key.on('s', MOD, () => {
     tilePosition('screenMiddle')
+})
+
+const screenCenter = Key.on('s', MOD2, () => {
+    tilePosition('screenCenter')
 })
 
 const screenMiddleOneThird = Key.on('s', MOD3, () => {

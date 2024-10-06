@@ -10,3 +10,10 @@
 - [Raycast](https://www.raycast.com/core-features/window-management)
 - [Magnet](https://magnet.crowdcafe.com/)
 - [Mosaic](https://mosaic.rcopstein.com/)
+
+## Terminal
+- MacOS [Hyper](https://hyper.is/)
+    - themes:
+        - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+        - [headline](https://github.com/Moarram/headline)
+- Linux

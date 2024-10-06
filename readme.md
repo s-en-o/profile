@@ -3,6 +3,7 @@
 ## Coding fonts
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
 - [Fira Code](https://github.com/tonsky/FiraCode)
+- [Nerd Font](https://www.nerdfonts.com/font-downloads)
 
 ## Windows management
 - [Aerospace](https://nikitabobko.github.io/AeroSpace/guide)

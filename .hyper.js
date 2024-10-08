@@ -32,7 +32,7 @@ module.exports = {
     foregroundColor: "#fff",
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: "#2e2c34",
+    backgroundColor: "#1e1e2e",
     // terminal selection color
     selectionColor: "rgba(248,28,229,0.3)",
     // border color (window, tabs)
@@ -55,38 +55,26 @@ module.exports = {
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
-
-    colors: [
-      '#181819',
-      '#FCD5D7C',
-      '#9ed072',
-      '#e7c664',
-      '#76cceo',
-      '#b39df3',
-      '#394634',
-      '#e2e2e3'
-    ],
-    
-    // colors: {
-    //   black: "#000000",
-    //   red: "#C51E14",
-    //   green: "#1DC121",
-    //   yellow: "#C7C329",
-    //   blue: "#0A2FC4",
-    //   magenta: "#C839C5",
-    //   cyan: "#20C5C6",
-    //   white: "#C7C7C7",
-    //   lightBlack: "#686868",
-    //   lightRed: "#FD6F6B",
-    //   lightGreen: "#67F86F",
-    //   lightYellow: "#FFFA72",
-    //   lightBlue: "#6A76FB",
-    //   lightMagenta: "#FD7CFC",
-    //   lightCyan: "#68FDFE",
-    //   lightWhite: "#FFFFFF",
-    //   limeGreen: "#32CD32",
-    //   lightCoral: "#F08080",
-    // },
+    colors: {
+      black: "#2e2c34",
+      red: "#df856f",
+      green: "#f9f871",
+      yellow: "#feb966",
+      blue: "#0A2FC4",
+      magenta: "#000",
+      cyan: "#63475c",
+      white: "#C7C7C7",
+      //lightBlack: "#686868",
+      //lightRed: "#FD6F6B",
+      //lightGreen: "#67F86F",
+      //lightYellow: "#FFFA72",
+      //lightBlue: "#6A76FB",
+      //lightMagenta: "#FD7CFC",
+      //lightCyan: "#68FDFE",
+      //lightWhite: "#FFFFFF",
+      //limeGreen: "#32CD32",
+      //lightCoral: "#F08080",
+    },
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
     //
@@ -150,7 +138,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [`hyperpower`],
+  //plugins: [`hyperpower`],
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed

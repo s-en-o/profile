@@ -12,8 +12,10 @@
 - [Mosaic](https://mosaic.rcopstein.com/)
 
 ## Terminal
-- MacOS [Hyper](https://hyper.is/)
-    - themes:
-        - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-        - [headline](https://github.com/Moarram/headline)
+- MacOS
+    - [Hyper](https://hyper.is/)
+        - themes:
+            - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+            - [headline](https://github.com/Moarram/headline)
+    - [Wezterm](https://wezfurlong.org/wezterm)
 - Linux

@@ -3,6 +3,65 @@ Phoenix.set({
     daemon: true,
     openAtLogin: true,
 })
+// ====================================
+//              EVENTS
+// ====================================
+// Bind “appDidLaunch” event to a callback function
+// const IDLaunch = Event.on('windowDidOpen', (window) => {
+//     const name = window.app().name()
+//     window.focus()
+
+//     console.log('=============', JSON.stringify(window), '===============')
+//     console.log('============= APP NAME: ', name, '===============')
+
+//     if (name === 'Zed' && window) {
+//         console.log('!!! LAUNCHED !!!')
+//         // tilePosition('leftHalf')
+//     }
+// })
+
+const IDAppLaunch = Event.on('appDidLaunch', (app) => {
+    const name = app.name()
+    console.log('=======> App ', name, ' is launched!')
+
+    // app.activate()
+    // app.focus()
+
+    // const wins = app.windows()
+    // console.log('======> wins', wins.length)
+
+    // const main = app.mainWindow()
+    // console.log('======> main', JSON.stringify(main))
+
+    // app.activate()
+    // app.focus()
+    // app.show()
+
+    if (name === 'Notes') {
+        tilePosition('rightTop')
+    }
+
+    if (name === 'Hyper') {
+        tilePosition('rightHalf')
+    }
+
+    //     if (name === 'Zed') {
+    //         console.log('!!! ZED LAUNCHED !!!')
+    //         app.activate()
+    //         app.focus()
+    //         app.show()
+    //         console.log(app.isHidden())
+    //         console.log(app.isActive())
+
+    //         const wins1 = app.windows()
+    //         console.log('wins1: ', wins1.length)
+
+    //         const main1 = app.mainWindow()
+    //         console.log('main1: ', main1)
+
+    //         tilePosition('leftHalf')
+    //     }
+})
 
 // Modifier keys
 const MOD = ['shift', 'ctrl']
@@ -52,6 +111,7 @@ const tilePosition = (position) => {
     const heightFull = screen.height - padding * 2
     const YBottomHalf = screen.y + screen.height / 2 + paddingHalf
     const widthHalf = screen.width / 2 - (padding + paddingHalf)
+    const XOneFifth = screen.width / 5
     const YOneFifth = screen.height / 5
     const XOneFourth = screen.width / 4
     const XOneThird = screen.width / 3
@@ -151,9 +211,9 @@ const tilePosition = (position) => {
 
         case 'screenMiddle':
             window.setFrame({
-                x: screen.x + XOneFourth,
+                x: screen.x + XOneFifth,
                 y: screen.y + padding,
-                width: screen.width / 2 - padding,
+                width: XOneThird * 2 - padding,
                 height: heightFull,
             })
             break

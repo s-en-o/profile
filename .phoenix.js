@@ -6,61 +6,30 @@ Phoenix.set({
 // ====================================
 //              EVENTS
 // ====================================
-// Bind “appDidLaunch” event to a callback function
-// const IDLaunch = Event.on('windowDidOpen', (window) => {
-//     const name = window.app().name()
-//     window.focus()
-
-//     console.log('=============', JSON.stringify(window), '===============')
-//     console.log('============= APP NAME: ', name, '===============')
-
-//     if (name === 'Zed' && window) {
-//         console.log('!!! LAUNCHED !!!')
-//         // tilePosition('leftHalf')
-//     }
-// })
+const removeTimeout = (timeoutID) => {
+	clearTimeout(timeoutID);
+};
 
 const IDAppLaunch = Event.on('appDidLaunch', (app) => {
 	const name = app.name();
 	console.log('=======> App ', name, ' is launched!');
 
-	// app.activate()
-	// app.focus()
+	const timeoutID = setTimeout(() => {
+		if (name === 'Code') {
+			tilePosition('rightHalf');
+		}
 
-	// const wins = app.windows()
-	// console.log('======> wins', wins.length)
+		if (name === 'Notes') {
+			tilePosition('rightHalf');
+		}
 
-	// const main = app.mainWindow()
-	// console.log('======> main', JSON.stringify(main))
+		if (name === 'Zed') {
+			tilePosition('rightHalf');
+		}
 
-	// app.activate()
-	// app.focus()
-	// app.show()
-
-	if (name === 'Notes') {
-		tilePosition('rightTop');
-	}
-
-	if (name === 'Hyper') {
-		tilePosition('rightHalf');
-	}
-
-	//     if (name === 'Zed') {
-	//         console.log('!!! ZED LAUNCHED !!!')
-	//         app.activate()
-	//         app.focus()
-	//         app.show()
-	//         console.log(app.isHidden())
-	//         console.log(app.isActive())
-
-	//         const wins1 = app.windows()
-	//         console.log('wins1: ', wins1.length)
-
-	//         const main1 = app.mainWindow()
-	//         console.log('main1: ', main1)
-
-	//         tilePosition('leftHalf')
-	//     }
+		// Clearing timeout
+		removeTimeout(timeoutID);
+	}, 250);
 });
 
 // Modifier keys

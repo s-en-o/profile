@@ -27,3 +27,4 @@ Potential candidates
 
 ## Time management
 - [ActivityWatch](https://github.com/ActivityWatch/activitywatch)
+    - [Browser plugin](https://chromewebstore.google.com/detail/activitywatch-web-watcher/nglaklhklhcoonedhgnpgddginnjdadi)

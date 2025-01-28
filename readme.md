@@ -1,4 +1,5 @@
 # My favourite various configuration
+Free Apps I used for my workspace.
 
 ## Coding fonts
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)
@@ -6,6 +7,10 @@
 - [Nerd Font](https://www.nerdfonts.com/font-downloads)
 
 ## Windows management
+Used
+- [Phoenix](https://github.com/kasper/phoenix)
+
+Potential candidates
 - [Aerospace](https://nikitabobko.github.io/AeroSpace/guide)
 - [Raycast](https://www.raycast.com/core-features/window-management)
 - [Magnet](https://magnet.crowdcafe.com/)
@@ -19,3 +24,6 @@
             - [headline](https://github.com/Moarram/headline)
     - [Wezterm](https://wezfurlong.org/wezterm)
 - Linux
+
+## Time management
+- [ActivityWatch](https://github.com/ActivityWatch/activitywatch)

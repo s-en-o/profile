@@ -18,13 +18,20 @@ Potential candidates
 
 ## Terminal
 - MacOS
-    - [Hyper](https://hyper.is/)
-        - themes:
-            - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-            - [headline](https://github.com/Moarram/headline)
-    - [Wezterm](https://wezfurlong.org/wezterm)
-- Linux
+    - themes:
+        - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+        - [headline](https://github.com/Moarram/headline)
+    - terminal:
+        - [Tabby](https://github.com/Eugeny/tabby)
+        - [Wezterm](https://wezfurlong.org/wezterm)
 
-## Time management
+
+## Project management
+
+### Note taking / Kanban board
+- [Appflowy](https://appflowy.io)
+- [Obsidian](https://obsidian.md)
+
+### Time
 - [ActivityWatch](https://github.com/ActivityWatch/activitywatch)
     - [Browser plugin](https://chromewebstore.google.com/detail/activitywatch-web-watcher/nglaklhklhcoonedhgnpgddginnjdadi)

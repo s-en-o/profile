@@ -1,4 +1,4 @@
-# My favourite various configuration
+# My software helpers tools
 Free Apps I used for my workspace.
 
 ## Coding fonts

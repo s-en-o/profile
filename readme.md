@@ -1,5 +1,5 @@
-# My software helpers tools
-Free Apps I used for my workspace.
+# My software helper tools
+
 
 ## Coding fonts
 - [Cascadia Code](https://github.com/microsoft/cascadia-code)

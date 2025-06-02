@@ -1,6 +1,6 @@
 // Run Phoenix in the background
 Phoenix.set({
-	daemon: true,
+	//daemon: true,
 	openAtLogin: true,
 });
 // ====================================
@@ -19,8 +19,8 @@ const IDAppLaunch = Event.on('appDidLaunch', (app) => {
 			tilePosition('rightHalf');
 		}
 
-		if (name === 'Notes') {
-			tilePosition('rightHalf');
+		if (name === 'Hyper') {
+			tilePosition('leftHalf');
 		}
 
 		if (name === 'Zed') {
@@ -29,7 +29,7 @@ const IDAppLaunch = Event.on('appDidLaunch', (app) => {
 
 		// Clearing timeout
 		removeTimeout(timeoutID);
-	}, 250);
+	}, 900);
 });
 
 // Modifier keys
@@ -59,6 +59,8 @@ const moveToNextDisplay = (window) => {
 
 	const nextScreen = screens.find(condition);
 	const nextScreenFlipped = nextScreen.flippedVisibleFrame();
+	const XOneSixth = nextScreenFlipped.width / 6;
+	const heightFull = nextScreenFlipped.height - padding * 2;
 
 	window.setFrame({
 		x: nextScreenFlipped.x + padding,
@@ -317,6 +319,10 @@ const bottomHalf = Key.on('x', MOD, () => {
 });
 
 // Two monitor setup
-const nextDisplay = Key.on('right', MOD, () => {
+const nextDisplayRight = Key.on('right', MOD, () => {
+	tilePosition('nextDisplay');
+});
+
+const nextDisplayLeft = Key.on('left', MOD, () => {
 	tilePosition('nextDisplay');
 });

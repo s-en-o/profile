@@ -19,11 +19,9 @@ Potential candidates
 ## Terminal
 - MacOS
     - themes:
-        - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
         - [headline](https://github.com/Moarram/headline)
     - terminal:
-        - [Tabby](https://github.com/Eugeny/tabby)
-        - [Wezterm](https://wezfurlong.org/wezterm)
+        - [Ghostty]([https://github.com/Eugeny/tabby](https://ghostty.org))
 
 
 ## Project management

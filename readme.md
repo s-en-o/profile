@@ -21,7 +21,7 @@ Potential candidates
     - themes:
         - [headline](https://github.com/Moarram/headline)
     - terminal:
-        - [Ghostty]([https://github.com/Eugeny/tabby](https://ghostty.org))
+        - [Ghostty](https://ghostty.org)
 
 
 ## Project management

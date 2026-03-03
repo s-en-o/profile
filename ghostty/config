@@ -1,5 +1,8 @@
 font-family = "FiraCode Nerd Font"
 font-size = 16
 theme = Srcery
-font-style-bold = Bold
+#theme = Teerb
+#theme = Xcode Dark hc
+font-variation-bold = wght=600
 font-thicken = true
+background-opacity = 0.95

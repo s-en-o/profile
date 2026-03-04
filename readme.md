@@ -23,7 +23,8 @@ Potential candidates
     - terminal:
         - [Ghostty](https://ghostty.org)
     - git:
-        - [Lazygit](https://github.com/jesseduffield/lazygit) 
+        - [Lazygit](https://github.com/jesseduffield/lazygit)
+        - [Git pager Delta](https://dandavison.github.io/delta/installation.html)
 
 
 ## Project management

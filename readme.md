@@ -18,10 +18,12 @@ Potential candidates
 
 ## Terminal
 - MacOS
-    - themes:
-        - [headline](https://github.com/Moarram/headline)
+    - shell:
+        - [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)      
     - terminal:
         - [Ghostty](https://ghostty.org)
+    - themes:
+        - [Headline](https://github.com/Moarram/headline)
     - git:
         - [Lazygit](https://github.com/jesseduffield/lazygit)
         - [Git pager Delta](https://dandavison.github.io/delta/installation.html)

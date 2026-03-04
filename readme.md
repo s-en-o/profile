@@ -22,6 +22,8 @@ Potential candidates
         - [headline](https://github.com/Moarram/headline)
     - terminal:
         - [Ghostty](https://ghostty.org)
+    - git:
+        - [Lazygit](https://github.com/jesseduffield/lazygit) 
 
 
 ## Project management

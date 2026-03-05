@@ -18,6 +18,8 @@ Potential candidates
 
 ## Terminal
 - MacOS
+    - editor:
+        - [LazyVim](https://www.lazyvim.org/)
     - shell:
         - [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)      
     - terminal:

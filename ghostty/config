@@ -1,8 +1,12 @@
 font-family = "FiraCode Nerd Font"
 font-size = 16
-theme = Srcery
+#theme = Srcery
 #theme = Teerb
 #theme = Xcode Dark hc
+theme = Everforest Dark Hard
 font-variation-bold = wght=600
 font-thicken = true
 background-opacity = 0.95
+# Keybind
+keybind = cmd+alt+]=next_tab
+keybind = cmd+alt+[=previous_tab

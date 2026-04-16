@@ -21,7 +21,8 @@ Potential candidates
     - editor:
         - [LazyVim](https://www.lazyvim.org/)
     - shell:
-        - [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)      
+        - [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+        - [Starship theme](https://starship.rs/presets/gruvbox-rainbow#gruvbox-rainbow-preset)      
     - terminal:
         - [Ghostty](https://ghostty.org)
     - themes:
